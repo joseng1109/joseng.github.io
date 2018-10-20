@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Totally Safe App</title>
-    <link rel="stylesheet"  type = "text/css" href="css/FBStyle.css">
+    <link rel="stylesheet" href=>
     <style media="screen">
         #fb-btn {
             margin-left: auto;
@@ -99,7 +99,7 @@
                         getPic(response);
                     }
                 })
-                getAlbumPhotos(response);
+                //getAlbumPhotos(response);
             })
         }
         function buildProfile(user) {
@@ -126,20 +126,21 @@
         }
         function getAlbumPhotos (response){
             let albumphotos = '<h3>Photos</h3>'
-            var albumArray[];
+            var albumArray = [];
             FB.api('/me?fields=albums.data.id)', function(response){
                 if (response && !response.error) {
                     for(let i in album.data) {
                         if (album.data[i].id)
-                           albumArray[i] = album.data[i].id
+                            albumArray[i] = album.data[i].id
                     }
                     for(n = 0; n < albumArray.length; n++){
-                        FB.api(albumArray[n] + '/?fields.photos{link}', function(response))
-                        albumPhotos += '<img src="' + response.albumArray[n].photos.link + '"';
+                        FB.api(albumArray[n] + '/?fields.photos{link}', function(response){
+                            albumPhotos += '<img src="' + response.albumArray[n].photos.link + '"';
+                        })
                     }
                 }
-            }
-            document.getElementById('photos')
+            })
+            document.getElementById('photos') = albumphotos;
         }
         function buildFeed(feed) {
             let output = '<h3>Latest Posts</h3>';
@@ -170,7 +171,7 @@
                 document.getElementById('profile').style.display = 'none';
                 document.getElementById('feed').style.display = 'none';
                 document.getElementById('fb-btn').style.display = 'block';
-                document.getElementById('heading').style.display = 'block';
+                //document.getElementById('heading').style.display = 'block';
             }
         }
         function logout() {
