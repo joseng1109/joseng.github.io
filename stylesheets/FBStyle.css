@@ -4,8 +4,10 @@
 }
 #header
 {
-background-color:#2853A4;
-margin:auto;
+background-color: #2853A4;
+
+position: relative;
 color: white;
-border: 3px black solid;
+border: 1px black solid;
+border-radius: 10px;
 }
