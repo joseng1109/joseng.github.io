@@ -1,6 +1,10 @@
 #loginlogout
 {
 	background-color: pink;
+	background-color: white;
+	border-top:1px white solid;
+	border-left:1px black solid;
+	border-right:1px black solid;
 }
 #header
 {
