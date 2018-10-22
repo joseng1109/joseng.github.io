@@ -30,7 +30,7 @@ border: 1px black solid;
 }
 body
 {
-	/*background-image:url(../img/fbback.jpg);*/
+	background-image:url(../img/fbback.jpg);
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-color:white;
